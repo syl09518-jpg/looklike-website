@@ -1,0 +1,252 @@
+/* Ümumi Tənzimləmələr */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #141414;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Navbar (Üst Menyu) */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.92), transparent);
+    z-index: 1000;
+}
+
+/* Yarısı Ağ, Yarısı Qırmızı Loqo */
+.logo {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.logo span {
+    color: #e50914;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #e5e5e5;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.sign-in-btn {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.sign-in-btn:hover {
+    background-color: #f40612;
+}
+
+/* Hero (Əsas Banner + 3D VR Səhnəsi) */
+.hero {
+    position: relative;
+    min-height: 85vh;
+    background: radial-gradient(circle at 75% 45%, #2b0912 0%, #141414 65%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 50px 40px;
+    gap: 30px;
+}
+
+.hero-content {
+    position: relative;
+    max-width: 540px;
+    z-index: 2;
+}
+
+.badge {
+    background-color: #e50914;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 3px;
+    letter-spacing: 1px;
+}
+
+.hero-content h1 {
+    font-size: 50px;
+    margin: 15px 0;
+    line-height: 1.1;
+}
+
+.hero-content p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #d2d2d2;
+    margin-bottom: 25px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-play, .btn-info {
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn-play {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.btn-info {
+    background-color: rgba(109, 109, 110, 0.7);
+    color: #ffffff;
+}
+
+.btn-play:hover, .btn-info:hover {
+    opacity: 0.85;
+    transform: scale(1.03);
+}
+
+/* 3D VR Eynəyi Animasiya və İşıq Effekti */
+.vr-showcase {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.vr-glow {
+    position: absolute;
+    width: 380px;
+    height: 220px;
+    background: radial-gradient(circle, rgba(229, 9, 20, 0.45), rgba(0, 212, 255, 0.25), transparent 70%);
+    filter: blur(35px);
+    z-index: 1;
+}
+
+.vr-3d-glasses {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    z-index: 2;
+    filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.85));
+    animation: float3D 4.5s ease-in-out infinite;
+    transform: perspective(900px) rotateY(-12deg) rotateX(4deg);
+}
+
+@keyframes float3D {
+    0%, 100% {
+        transform: perspective(900px) rotateY(-12deg) rotateX(4deg) translateY(0px);
+    }
+    50% {
+        transform: perspective(900px) rotateY(-6deg) rotateX(7deg) translateY(-14px);
+    }
+}
+
+/* Filmlər Bölməsi */
+.container {
+    padding: 20px 50px 60px;
+    position: relative;
+    z-index: 3;
+}
+
+.row {
+    margin-bottom: 45px;
+}
+
+.row h2 {
+    font-size: 22px;
+    margin-bottom: 18px;
+    color: #e5e5e5;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.movie-card {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #1f1f1f;
+    cursor: pointer;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.movie-card:hover {
+    transform: scale(1.07);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+    z-index: 10;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-info {
+    padding: 12px 15px;
+}
+
+.card-info h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.card-info span {
+    font-size: 12px;
+    color: #46d369;
+    font-weight: 600;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #2a2a2a;
+    color: #757575;
+    font-size: 14px;
+}

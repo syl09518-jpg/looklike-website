@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LookLike - Film və Serial Platforması</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Yuxarı Menyu (Navbar) -->
+    <header class="navbar">
+        <div class="logo">Look<span>Like</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Əsas səhifə</a></li>
+                <li><a href="#seriallar">Seriallar</a></li>
+                <li><a href="#filmler">Filmlər</a></li>
+                <li><a href="#yeniler">Yeni Əlavələr</a></li>
+            </ul>
+        </nav>
+        <button class="sign-in-btn">Daxil ol</button>
+    </header>
+
+    <!-- Əsas Afişa (Hero Section + 3D VR Eynəyi) -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge">3D & VR EKSKLÜZİV</span>
+            <h1>Virtual Reallıq: Yeni Ölçü</h1>
+            <p>Gerçəkliklə xəyal arasındakı sərhədlərin silindiyi 3D kainata daxil ol. 360 dərəcəlik panoramik görüntü və nəfəskəsən səhnələrlə kinonu sadəcə izləmə, içində yaşa.</p>
+            <div class="hero-buttons">
+                <button class="btn-play">▶ İzlə</button>
+                <button class="btn-info">ⓘ Ətraflı məlumat</button>
+            </div>
+        </div>
+
+        <!-- Sağ tərəfdə 3D Neon VR Eynəyi -->
+        <div class="vr-showcase">
+            <div class="vr-glow"></div>
+            <svg class="vr-3d-glasses" viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <!-- 3D Korpus Qradienti -->
+                    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#3a3d45"/>
+                        <stop offset="50%" stop-color="#1c1e22"/>
+                        <stop offset="100%" stop-color="#0b0c0e"/>
+                    </linearGradient>
+                    <!-- Ön Şüşə (Neon Qırmızı-Bənövşəyi-Mavi 3D Vizor) -->
+                    <linearGradient id="visorGrad" x1="0%" y1="0%" x2="100%" y2="50%">
+                        <stop offset="0%" stop-color="#ff0a2b"/>
+                        <stop offset="45%" stop-color="#79093b"/>
+                        <stop offset="100%" stop-color="#00d4ff"/>
+                    </linearGradient>
+                    <!-- Şüşə Parıltısı -->
+                    <linearGradient id="shineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="rgba(255,255,255,0.55)"/>
+                        <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+                    </linearGradient>
+                    <!-- Neon İşıq Efekti -->
+                    <filter id="neonBlur" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur stdDeviation="8" result="blur"/>
+                        <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                    </filter>
+                </defs>
+
+                <!-- Baş Kəməri (Arxa 3D hissə) -->
+                <path d="M115 145 C40 140, 35 215, 125 210" fill="none" stroke="#18191c" stroke-width="26" stroke-linecap="round"/>
+                <path d="M485 145 C560 140, 565 215, 475 210" fill="none" stroke="#18191c" stroke-width="26" stroke-linecap="round"/>
+
+                <!-- Eynəyin Əsas 3D Korpusu -->
+                <rect x="105" y="95" width="390" height="175" rx="65" fill="url(#bodyGrad)" stroke="#4e525c" stroke-width="3"/>
+                
+                <!-- 3D Dərinlik Kölgəsi -->
+                <rect x="115" y="105" width="370" height="155" rx="58" fill="#0d0e11"/>
+
+                <!-- Parlaq Neon Vizor Şüşəsi -->
+                <path d="M130 120 Q300 105 470 120 Q485 180 465 240 Q360 250 300 225 Q240 250 135 240 Q115 180 130 120 Z" 
+                      fill="url(#visorGrad)" filter="url(#neonBlur)"/>
+                <path d="M130 120 Q300 105 470 120 Q485 180 465 240 Q360 250 300 225 Q240 250 135 240 Q115 180 130 120 Z" 
+                      fill="url(#visorGrad)" stroke="#ff3b4e" stroke-width="2.5"/>
+
+                <!-- Vizor Üzərində 3D İşıq Əksi (Glass Reflection) -->
+                <path d="M150 132 Q300 118 450 132 Q455 155 440 165 Q300 150 160 165 Q145 155 150 132 Z" 
+                      fill="url(#shineGrad)"/>
+
+                <!-- Mərkəzi 3D Sensor Xətti -->
+                <line x1="300" y1="125" x2="300" y2="215" stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-dasharray="6,6"/>
+                
+                <!-- Yan Düymələr və Sensorlar -->
+                <rect x="96" y="155" width="12" height="45" rx="6" fill="#e50914"/>
+                <rect x="492" y="155" width="12" height="45" rx="6" fill="#00d4ff"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Film və Serial Kateqoriyaları -->
+    <main class="container">
+        
+        <!-- 1-ci Sıra -->
+        <section class="row" id="seriallar">
+            <h2>Hazırda Trend Olanlar</h2>
+            <div class="movie-grid">
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=500&q=80" alt="Film 1">
+                    <div class="card-info">
+                        <h3>Gecə Kölgələri</h3>
+                        <span>2026 • Triller • 98% Uyğunluq</span>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=500&q=80" alt="Film 2">
+                    <div class="card-info">
+                        <h3>Kiber Şəhər 2099</h3>
+                        <span>2025 • Fantastika • 95% Uyğunluq</span>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=500&q=80" alt="Film 3">
+                    <div class="card-info">
+                        <h3>Sonuncu Kadr</h3>
+                        <span>2026 • Dram • 92% Uyğunluq</span>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&w=500&q=80" alt="Film 4">
+                    <div class="card-info">
+                        <h3>Səssiz Okean</h3>
+                        <span>2024 • Macəra • 89% Uyğunluq</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2-ci Sıra -->
+        <section class="row" id="filmler">
+            <h2>Populyar Filmlər</h2>
+            <div class="movie-grid">
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=500&q=80" alt="Film 5">
+                    <div class="card-info">
+                        <h3>Qırmızı Pərdə</h3>
+                        <span>2026 • Dram • 97% Uyğunluq</span>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=500&q=80" alt="Film 6">
+                    <div class="card-info">
+                        <h3>Qaranlıq Kod</h3>
+                        <span>2025 • Detektiv • 94% Uyğunluq</span>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=500&q=80" alt="Film 7">
+                    <div class="card-info">
+                        <h3>Köhnə Proyektor</h3>
+                        <span>2026 • Mistika • 91% Uyğunluq</span>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=500&q=80" alt="Film 8">
+                    <div class="card-info">
+                        <h3>Əfsanəvi Krallıq</h3>
+                        <span>2025 • Fentezi • 96% Uyğunluq</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Aşağı Hissə (Footer) -->
+    <footer>
+        <p>© 2026 LookLike Azərbaycan.</p>
+    </footer>
+
+</body>
+</html>
